@@ -2,12 +2,10 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
-
 enum Sex {
-    Male = 'male',
-    Female = 'female',
-    Unisex = 'unisex',
+  Male = "male",
+  Female = "female",
+  Unisex = "unisex",
 }
 
 export interface Item {
@@ -20,25 +18,27 @@ export interface Item {
 
 export interface ItemState {
   items: Item[];
-  loading: 'pending' | 'fulfilled' | 'rejected';
+  loading: "pending" | "fulfilled" | "rejected";
 }
 
 const initialState: ItemState = {
   items: [],
-  loading: 'pending',
-}
+  loading: "pending",
+};
 
-export const fetchShopItems = createAsyncThunk(
-    "items/fetchShopItems",
-    async (_, { dispatch }) => {
-      try {
-        const { data } = await axios.get("../data/items.json");
-        dispatch(setItems(data));
-      } catch (error) {
-          throw error;
-      }
+export const fetchShopItems = createAsyncThunk<Item[]>(
+  "items/fetchShopItems",
+  async (_, { dispatch }) => {
+    try {
+      const { data } = await axios.get("http://localhost:3001/items");
+      dispatch(setItems(data));
+      console.log(data)
+      return data;
+    } catch (error) {
+      throw error;
     }
-  );
+  }
+);
 
 export const itemSlice = createSlice({
   name: "shopItem",
@@ -50,13 +50,13 @@ export const itemSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchShopItems.pending, (state) => {
-        state.loading = 'pending';
-    }),
+      state.loading = "pending";
+    });
     builder.addCase(fetchShopItems.fulfilled, (state, action: PayloadAction<Item[]>) => {
-        state.loading = 'fulfilled';
-        state.items = action.payload;
-    })
-  }
+      state.loading = "fulfilled";
+      state.items = action.payload;
+    });
+  },
 });
 
 export const { setItems } = itemSlice.actions;

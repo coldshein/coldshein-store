@@ -166,10 +166,15 @@ body {
   width: 100%;
 }
 .card-img{
-  background-color: red;
-  height: 200px;
+  height: 250px;
   width: 100%;
   margin-bottom: 10px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+  }
 }
 .card-title{
   font-size: 14px;

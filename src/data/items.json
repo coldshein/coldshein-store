@@ -1,11 +1,9 @@
-[
+{
+  "items": [
     {
       "id": 1,
       "title": "NIKE AIR FORCE 1 LV8 XLD",
-      "sex": [
-        "men",
-        "unisex"
-      ],
+      "sex": ["men", "unisex"],
       "price": "$130",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0012_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090632",
@@ -16,3 +14,4 @@
       ]
     }
   ]
+}
