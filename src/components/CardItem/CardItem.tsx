@@ -2,11 +2,13 @@ import React from 'react'
 
 type CardItemProps = {
     title: string;
-    imageUrl: string;
+    imageUrl: string[];
     price: string;
+    brand: string;
+    size: number[];
 }
 
-const CardItem: React.FC<CardItemProps> = ({title, imageUrl, price}) => {
+const CardItem: React.FC<CardItemProps> = ({title, imageUrl, price, size}) => {
 
     
     return ( 

@@ -5,6 +5,8 @@
       "title": "NIKE AIR FORCE 1 LV8 XLD",
       "sex": ["men", "unisex"],
       "price": "$130",
+      "brand": "Nike",
+      "size": [39,40,41,42,43,44,45,46],
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0012_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090632",
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0013_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090633",
