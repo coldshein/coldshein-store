@@ -2,21 +2,16 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export enum Sex {
-  Male = "male",
-  Female = "female",
-  Unisex = "unisex",
-}
-
 export interface Item {
   id: number;
   title: string;
-  sex: Sex;
+  sex: string;
   price: string;
   brand: string;
   size: number[],
   imageUrl: string[];
   link: string;
+  type: string;
 }
 
 export interface ItemState {

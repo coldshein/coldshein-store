@@ -3,6 +3,7 @@ import React from "react";
 const Brands = () => {
   return (
     <div className="main-block">
+      <div className="container">
       <div className="page-header">home * designers</div>
       <div className="brands-block">
         <div className="brands-title">Designers</div>
@@ -13,6 +14,7 @@ const Brands = () => {
                 }
             </ul>
         </div>
+      </div>
       </div>
     </div>
   );

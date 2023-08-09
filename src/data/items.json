@@ -3,10 +3,11 @@
     {
       "id": 1,
       "title": "NIKE AIR FORCE 1 LV8 XLD",
-      "sex": ["men", "unisex"],
+      "sex": "Men",
       "price": "$130",
       "brand": "Nike",
       "size": [39,40,41,42,43,44,45,46],
+      "type": "Shoes",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0012_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090632",
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0013_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090633",
@@ -14,6 +15,23 @@
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0010_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090629",
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0011_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090630"
       ]
+    },
+    {
+      "id": 2,
+      "title": "MAISON MIHARA PETERSON LOW IN LIGHT BLUE XLD",
+      "sex": "Men",
+      "price": "$340",
+      "brand": "Maison Mihara Yasuhiro",
+      "size": [39,40,41,42,43,44,45,46],
+      "type": "Shoes",
+      "imageUrl": [
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0045_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440497",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0046_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440498",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0047_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440500",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0048_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440501",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0049_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440503"
+      ]
     }
+
   ]
 }
