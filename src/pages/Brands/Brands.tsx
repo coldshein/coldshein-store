@@ -1,6 +1,19 @@
 import React from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-const Brands = () => {
+const Brands: React.FC = () => {
+  const [designers, setDesigners] = React.useState<string[]>([]);
+  const fetchDesigners = async () => {
+    const {data} = await axios.get('http://localhost:3001/designers');
+    setDesigners(data);
+  }
+
+  React.useEffect(() => {
+    fetchDesigners();
+  }, [])
+  const sortedDesigners = designers.sort((a,b) => a.localeCompare(b));
+  
   return (
     <div className="main-block">
       <div className="container">
@@ -10,7 +23,9 @@ const Brands = () => {
         <div className="brands-list">
             <ul>
                 {
-                    Array.from(Array(50)).map(item => <li>Lorem ipsum dolor sit amet.</li>)
+                    sortedDesigners ? sortedDesigners.map((item) => (
+                      <li><Link to={`/designers/${item}`}>{item.toUpperCase()}</Link></li>
+                    )) : 'Loading...'
                 }
             </ul>
         </div>
