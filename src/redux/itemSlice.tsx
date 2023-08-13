@@ -17,26 +17,30 @@ export interface Item {
 export interface ItemState {
   items: Item[];
   loading: "pending" | "fulfilled" | "rejected";
+  searchValue: string;
 }
 
 const initialState: ItemState = {
   items: [],
   loading: "pending",
+  searchValue: "",
 };
 
-export const fetchShopItems = createAsyncThunk<Item[]>(
+export const fetchShopItems = createAsyncThunk<Item[], string | void>(
   "items/fetchShopItems",
-  async (_, { dispatch }) => {
+  async (query, { dispatch }) => {
     try {
-      const { data } = await axios.get("http://localhost:3001/items");
+      const url = query ? `http://localhost:3001/items?q=${query}` : `http://localhost:3001/items`
+      const { data } = await axios.get(url);
       dispatch(setItems(data));
-      console.log(data)
       return data;
     } catch (error) {
       throw error;
     }
   }
 );
+
+
 
 export const itemSlice = createSlice({
   name: "shopItem",
@@ -45,6 +49,9 @@ export const itemSlice = createSlice({
     setItems: (state, action: PayloadAction<Item[]>) => {
       state.items = action.payload;
     },
+    setSearchValue: (state, action: PayloadAction<string>) => {
+      state.searchValue = action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(fetchShopItems.pending, (state) => {
@@ -57,5 +64,6 @@ export const itemSlice = createSlice({
   },
 });
 
-export const { setItems } = itemSlice.actions;
+export const { setItems, setSearchValue } = itemSlice.actions;
 export default itemSlice.reducer;
+

@@ -4,18 +4,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { fetchShopItems } from "../../redux/itemSlice";
 import { AnyAction, Dispatch } from "@reduxjs/toolkit";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
+type QueryType = {
+  query: string,
+}
 
 const ItemList = () => {
-  const { items, loading } = useSelector((state: RootState) => state.shopItems);
+  
+  const { query } = useParams<QueryType>();
+
+  const { items, loading, searchValue } = useSelector((state: RootState) => state.shopItems);
   const dispatch: Dispatch<AnyAction> = useDispatch();
 
   const isItemsLoading = loading === "pending";
 
-  
+  const searchQuery = query ? searchValue : '';
 
   React.useEffect(() => {
-    dispatch(fetchShopItems() as any);
+    dispatch(fetchShopItems(searchQuery) as any);
+
   }, []);
   return (
     <div className="item-list">
