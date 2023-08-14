@@ -58,7 +58,7 @@ const Header = () => {
             <div className="search-bar">
               <input
                 type="text"
-                placeholder=" "
+                placeholder=" " 
                 onChange={onChangeInput}
                 value={searchValue}
                 id="search"
@@ -71,7 +71,7 @@ const Header = () => {
               />
               {
                 searchValue && <div className="search-list"><Link to={`/search/${searchValue}`}>Search for "{searchValue}"
-                <img src="assets/icons/arrow-right.svg" alt="" /></Link></div>
+                <img src='assets/icons/arrowRight.svg' alt="" /></Link></div>
               }
             </div>
             <div onClick={closeSearch} className="close-search">

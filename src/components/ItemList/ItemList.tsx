@@ -14,15 +14,13 @@ const ItemList = () => {
   
   const { query } = useParams<QueryType>();
 
-  const { items, loading, searchValue } = useSelector((state: RootState) => state.shopItems);
+  const { items, loading } = useSelector((state: RootState) => state.shopItems);
   const dispatch: Dispatch<AnyAction> = useDispatch();
 
   const isItemsLoading = loading === "pending";
 
-  const searchQuery = query ? searchValue : '';
-
   React.useEffect(() => {
-    dispatch(fetchShopItems(searchQuery) as any);
+    dispatch(fetchShopItems(query) as any);
 
   }, []);
   return (
@@ -30,7 +28,7 @@ const ItemList = () => {
       {isItemsLoading
         ? "Loading"
         : items.map((item) => (
-            <Link to={`items/${item.id}`} key={item.id}>
+            <Link to={`../items/${item.id}`} key={item.id}>
               <CardItem
                 title={item.title}
                 imageUrl={item.imageUrl}
