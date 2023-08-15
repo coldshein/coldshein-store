@@ -14,12 +14,13 @@ const Header = () => {
   };
 
   React.useEffect(() => {
+    dispatch(setSearchValue(''));
     return () => setOpenSearch(false);
-  },[])
+  }, []);
 
   const closeSearch = () => {
     setOpenSearch(false);
-    dispatch(setSearchValue(''));
+    dispatch(setSearchValue(""));
   };
 
   return (
@@ -58,7 +59,7 @@ const Header = () => {
             <div className="search-bar">
               <input
                 type="text"
-                placeholder=" " 
+                placeholder=" "
                 onChange={onChangeInput}
                 value={searchValue}
                 id="search"
@@ -69,10 +70,14 @@ const Header = () => {
                 className="search-icon"
                 alt=""
               />
-              {
-                searchValue && <div className="search-list"><Link to={`/search/${searchValue}`}>Search for "{searchValue}"
-                <img src='assets/icons/arrowRight.svg' alt="" /></Link></div>
-              }
+              {searchValue && (
+                <div className="search-list" onClick={closeSearch}>
+                  <Link to={`/search/${searchValue}`}>
+                    Search for "{searchValue}"
+                    <img src="assets/icons/arrowRight.svg" alt="" />
+                  </Link>
+                </div>
+              )}
             </div>
             <div onClick={closeSearch} className="close-search">
               <img src="assets/icons/close.svg" alt="" />

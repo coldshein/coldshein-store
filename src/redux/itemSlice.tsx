@@ -30,7 +30,7 @@ export const fetchShopItems = createAsyncThunk<Item[], string | void>(
   "items/fetchShopItems",
   async (query, { dispatch }) => {
     try {
-      const url = query ? `http://localhost:3001/items?q=${query}` : `http://localhost:3001/items`
+      const url = query ? `http://localhost:3001/items?q=${query}` : `http://localhost:3001/items`;
       const { data } = await axios.get(url);
       dispatch(setItems(data));
       return data;

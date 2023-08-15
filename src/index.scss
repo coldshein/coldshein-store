@@ -79,7 +79,6 @@ body {
 .search-block{
   height: 95px;
   background-color: #ffff;
-  border-bottom: 1px solid #111;
   width: 100%;
   display: flex;
   align-items: center;
@@ -452,4 +451,9 @@ body {
   border: none;
   text-transform: uppercase;
   padding: 20px;
+}
+// ALERT TITLE++++++++++++++++++++++++++++
+.alert-title{
+  font-size: 18px;
+  text-align: center;
 }
