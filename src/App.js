@@ -15,6 +15,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="" element={<Home />} />
         <Route path="/designers" element={<Brands />} />
+        <Route path="/collections/:link" element={<Home />} />
         <Route path="/items/:id" element={<FullCard />} />
         <Route path="/search/:query" element={<SearchResult />} />
       </Route>

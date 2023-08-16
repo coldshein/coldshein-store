@@ -8,7 +8,7 @@ export interface Item {
   sex: string;
   price: string;
   brand: string;
-  size: number[],
+  size: number[];
   imageUrl: string[];
   link: string;
   type: string;
@@ -30,7 +30,9 @@ export const fetchShopItems = createAsyncThunk<Item[], string | void>(
   "items/fetchShopItems",
   async (query, { dispatch }) => {
     try {
-      const url = query ? `http://localhost:3001/items?q=${query}` : `http://localhost:3001/items`;
+      const url = query
+        ? `http://localhost:3001/items?q=${query}`
+        : `http://localhost:3001/items`;
       const { data } = await axios.get(url);
       dispatch(setItems(data));
       return data;
@@ -40,7 +42,19 @@ export const fetchShopItems = createAsyncThunk<Item[], string | void>(
   }
 );
 
-
+export const fetchCollections = createAsyncThunk<Item[], string | void>(
+  "items/fetchShopItems",
+  async (link, { dispatch }) => {
+    try {
+      const url = `http://localhost:3001/items?link=${link}`;
+      const { data } = await axios.get(url);
+      dispatch(setItems(data));
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+);
 
 export const itemSlice = createSlice({
   name: "shopItem",
@@ -51,19 +65,21 @@ export const itemSlice = createSlice({
     },
     setSearchValue: (state, action: PayloadAction<string>) => {
       state.searchValue = action.payload;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchShopItems.pending, (state) => {
       state.loading = "pending";
     });
-    builder.addCase(fetchShopItems.fulfilled, (state, action: PayloadAction<Item[]>) => {
-      state.loading = "fulfilled";
-      state.items = action.payload;
-    });
+    builder.addCase(
+      fetchShopItems.fulfilled,
+      (state, action: PayloadAction<Item[]>) => {
+        state.loading = "fulfilled";
+        state.items = action.payload;
+      }
+    );
   },
 });
 
 export const { setItems, setSearchValue } = itemSlice.actions;
 export default itemSlice.reducer;
-
