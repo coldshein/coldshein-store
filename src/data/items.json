@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "NIKE AIR FORCE 1 LV8 XLD",
-      "sex": "Men",
+      "sex": "men",
       "price": "$130",
       "brand": "Nike",
       "link": "nike",
@@ -20,7 +20,7 @@
     {
       "id": 2,
       "title": "MAISON MIHARA PETERSON LOW IN LIGHT BLUE XLD",
-      "sex": "Men",
+      "sex": "men",
       "price": "$340",
       "brand": "Maison Mihara Yasuhiro",
       "link": "maison-mihara-yasuhiro",
@@ -37,69 +37,55 @@
     {
       "id": 3,
       "title": "A BATHING APE MARBLING BY BATHING APE TEE IN WHITE XLD",
-      "sex": "Men",
+      "sex": "men",
       "price": "$99",
       "brand": "A Bathing Ape",
       "link": "a-bathing-ape",
-      "size": [39,40,41,42,43,44,45,46],
+      "size": [
+        "XS", "S", "M", "L", "XL"
+      ],
       "type": "T-shirt",
       "imageUrl": [
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0023_BAPE-BIG-HEAD-SS-TEE-WHITE_MULTI-1J80110023_1100x.jpg?v=1690404867",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0046_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440498",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0047_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440500",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0048_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440501",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0049_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440503"
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0023_BAPE-BIG-HEAD-SS-TEE-WHITE_MULTI-1J80110023_1100x.jpg?v=1690404867"
       ]
     },
     {
       "id": 4,
       "title": "A-COLD-WALL* OVERDYED PRINT HOODIE",
-      "sex": "Men",
+      "sex": "men",
       "price": "$219",
       "brand": "A-COLD-WALL",
       "link": "a-cold-wall",
-      "size": [39,40,41,42,43,44,45,46],
+      "size": [ "XS", "S", "M", "L", "XL"],
       "type": "Hoodie",
       "imageUrl": [
-        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0008_A-COLD-WALL_ARTISAN_FIGURE_PRINT_HOODIE_MORTAR-GREY_ACWMW039_fd9edb05-c9f9-4179-a424-6e0cc3a3d778_1100x.jpg?v=1620326874",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0046_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440498",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0047_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440500",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0048_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440501",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0049_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440503"
+        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0008_A-COLD-WALL_ARTISAN_FIGURE_PRINT_HOODIE_MORTAR-GREY_ACWMW039_fd9edb05-c9f9-4179-a424-6e0cc3a3d778_1100x.jpg?v=1620326874"
       ]
     },
     {
       "id": 5,
       "title": "BBC SCRIBBLED S/S TEE XLD",
-      "sex": "Men",
+      "sex": "men",
       "price": "$60",
       "brand": "BBC",
       "link": "bbc",
-      "size": [39,40,41,42,43,44,45,46],
+      "size": [ "XS", "S", "M", "L", "XL"],
       "type": "T-shirt",
       "imageUrl": [
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0042_BBC-BB-SCRIBBLE-SS-TEE-BLACK-831-6209_1100x.jpg?v=1691518174",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0046_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440498",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0047_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440500",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0048_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440501",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0049_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440503"
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0042_BBC-BB-SCRIBBLE-SS-TEE-BLACK-831-6209_1100x.jpg?v=1691518174"
       ]
     },
     {
       "id": 6,
       "title": "CONVERSE CHUCK 70 PLUS HI",
-      "sex": "Men",
+      "sex": "women",
       "price": "$340",
       "brand": "Converse",
       "link": "converse",
       "size": [39,40,41,42,43,44,45,46],
       "type": "Shoes",
       "imageUrl": [
-        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0000_CONVERSE-CHUCK-70-PLUS-HI-SQUIRREL-FRIEND_NAVY-A02871C_1100x.jpg?v=1674235922",
-        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0001_CONVERSE-CHUCK-70-PLUS-HI-SQUIRREL-FRIEND_NAVY-A02871C_1100x.jpg?v=1674235923",
-        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0002_CONVERSE-CHUCK-70-PLUS-HI-SQUIRREL-FRIEND_NAVY-A02871C_1100x.jpg?v=1674235925",
-        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0003_CONVERSE-CHUCK-70-PLUS-HI-SQUIRREL-FRIEND_NAVY-A02871C_1100x.jpg?v=1674235926",
-        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0004_CONVERSE-CHUCK-70-PLUS-HI-SQUIRREL-FRIEND_NAVY-A02871C_1100x.jpg?v=1674235929"
+        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0000_CONVERSE-CHUCK-70-PLUS-HI-SQUIRREL-FRIEND_NAVY-A02871C_1100x.jpg?"
       ]
     }
 

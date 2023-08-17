@@ -38,10 +38,10 @@ const FullCard: React.FC = () => {
           <Link to={`/items/${id}`}>{items.title}</Link>
         </div>
         <div className="full-card__inner">
-          <div className="photo-block">
+          <div className={items.imageUrl.length === 1 ? `photo-block` : `photo-list`}>
             {items.imageUrl.map((url, index) => (
               <img key={index} src={url} alt={items.title} />
-            ))}
+            ))} 
           </div>
           <div className="item-info">
             <div className="item-brand">{items.brand}</div>

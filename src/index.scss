@@ -11,12 +11,16 @@
   color: #000;
 }
 
-body {
-
-}
 
 .App {
   background-color: white;
+  position: relative;
+  
+}
+.app-container{
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .container {
@@ -31,7 +35,6 @@ body {
 .header {
   width: 100%;
   height: 95px;
-
   position: relative;
 }
 
@@ -337,7 +340,7 @@ body {
   display: flex;
 }
 
-.photo-block {
+.photo-list {
   width: 70%;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -377,6 +380,15 @@ body {
   "third-photo third-photo"
   "fourth-photo fifth-photo";
 
+}
+.photo-block{
+  width: 100%;
+  height: 100%;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 .item-info {
@@ -456,4 +468,86 @@ body {
 .alert-title{
   font-size: 18px;
   text-align: center;
+}
+
+// CART++++++++++++++++++++++++++++++++++++
+.cart{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00000069;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: end;
+}
+.cart-block{
+  position: relative;
+  padding: 10px 20px;
+  width: 30%;
+  background-color: #fff;
+  border: 1px solid #111;
+}
+.cart-title{
+  font-size: 14px;
+  margin: 10px;
+}
+.close-cart{
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  user-select: none;
+  width: 30px;
+  height: 30px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+// CARTITEM++++++++++++++++++++++++
+.cart-item{
+  padding: 20px 0;
+  width: 100%;
+  display: flex;
+}
+.cart-item__img{
+  width: 110px;
+  height: 90px;
+  margin-right: 15px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+.cart-item__price{
+  align-self: flex-end;
+  margin-left: auto;
+}
+.cart-item__title{
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.cart-item__size{
+  font-size: 14px;
+}
+.cart-item__price{
+  font-size: 16px;
+  font-weight: 700;
+}
+.cart-item{
+  border-bottom: 2px solid #111;
+}
+.cart-item__counter{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.counter{
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 700;
 }

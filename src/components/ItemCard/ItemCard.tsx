@@ -8,7 +8,7 @@ type CardItemProps = {
     size: number[];
 }
 
-const CardItem: React.FC<CardItemProps> = ({title, imageUrl, price, size}) => {
+const ItemCard: React.FC<CardItemProps> = ({title, imageUrl, price, size}) => {
 
     
     return ( 
@@ -22,4 +22,4 @@ const CardItem: React.FC<CardItemProps> = ({title, imageUrl, price, size}) => {
      );
 }
  
-export default CardItem;
+export default ItemCard;

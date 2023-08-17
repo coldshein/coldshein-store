@@ -56,6 +56,20 @@ export const fetchCollections = createAsyncThunk<Item[], string | void>(
   }
 );
 
+export const fetchSexCollections = createAsyncThunk<Item[], string | void>(
+  "items/fetchSexCollections",
+  async (sex, {dispatch}) => {
+    try {
+      const url = `http://localhost:3001/items?sex=${sex}`;
+      const {data} = await axios.get(url);
+      dispatch(setItems(data));
+      return data;
+    } catch (error) {
+      
+    }
+  }
+)
+
 export const itemSlice = createSlice({
   name: "shopItem",
   initialState,

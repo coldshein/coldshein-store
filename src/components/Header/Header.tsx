@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import { setSearchValue } from "../../redux/itemSlice";
+import { setOpenCart } from "../../redux/cartSlice";
+
+
+
 const Header = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
   const dispatch = useDispatch();
@@ -14,7 +18,7 @@ const Header = () => {
   };
 
   React.useEffect(() => {
-    dispatch(setSearchValue(''));
+    dispatch(setSearchValue(""));
     return () => setOpenSearch(false);
   }, []);
 
@@ -22,6 +26,11 @@ const Header = () => {
     setOpenSearch(false);
     dispatch(setSearchValue(""));
   };
+  const openCart = () => {
+    dispatch(setOpenCart());
+  };
+
+  
 
   return (
     <header className="header">
@@ -30,10 +39,10 @@ const Header = () => {
           <nav className="header-nav">
             <ul>
               <li>
-                <a href="">men</a>
+                <Link to="/collection/men">man</Link>
               </li>
               <li>
-                <a href="">women</a>
+                <Link to="/collection/women">woman</Link>
               </li>
               <li>
                 <Link to="/designers">designers</Link>
@@ -46,8 +55,8 @@ const Header = () => {
           <nav className="header-nav">
             <ul>
               <li onClick={() => setOpenSearch(true)}>search</li>
-              <li>
-                <a href="">cart</a>
+              <li onClick={openCart}>
+                cart
               </li>
             </ul>
           </nav>

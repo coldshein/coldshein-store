@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CardItem from "../../components/CardItem/CardItem";
+import CardItem from "../../components/ItemCard/ItemCard";
 import Sort from "../../components/Sort/Sort";
 import ItemList from "../../components/ItemList/ItemList";
 
