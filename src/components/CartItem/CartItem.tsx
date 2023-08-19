@@ -2,7 +2,19 @@ import React from "react";
 
 
 const CartItem: React.FC = () => {
-    
+
+  let [quantity, setQuantity] = React.useState(1);
+
+  const addQuantity = () => {
+    setQuantity(++quantity)
+  }
+  const removeQuantity = () => {
+    if(quantity > 1){
+      setQuantity(--quantity)
+    } else {
+      setQuantity(1)
+    }
+  }
   return (
     <div className="cart-item">
       <div className="cart-item__img">
@@ -15,9 +27,9 @@ const CartItem: React.FC = () => {
         <div className="cart-item__title">NIKE AIR FORCE 1 LV8 XLD</div>
         <div className="cart-item__size">Size: 40</div>
         <div className="cart-item__counter">
-            <div className="counter">+</div>
-            <div className="count">15</div>
-            <div className="counter">-</div>
+            <div className="counter" onClick={() => addQuantity()}>+</div>
+            <div className="count">{quantity}</div>
+            <div className="counter" onClick={() => removeQuantity()}>-</div>
         </div>
       </div>
       <div className="cart-item__price">$100.00</div>

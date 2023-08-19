@@ -12,11 +12,12 @@ const FullCard: React.FC = () => {
     price: string;
     title: string;
     imageUrl: string[];
-    size: number[];
+    size: string[];
     brand: string;
     sex: string;
     type: string;
   }>();
+  const [size, setSize] = React.useState('');
   const { id } = useParams<itemParams>();
   const fetchOneItem = async (id: any) => {
     const { data } = await axios.get(`http://localhost:3001/items/${id}`);
@@ -25,6 +26,11 @@ const FullCard: React.FC = () => {
   React.useEffect(() => {
     fetchOneItem(id);
   }, []);
+
+  const handleSize = (size: any) => {
+    setSize(size)
+  }
+  console.log(size);
 
   if (!items) {
     return <>Loading...</>;
@@ -54,7 +60,7 @@ const FullCard: React.FC = () => {
               Size:
               <div className="item-sizes__block">
                 {items.size.map((item) => (
-                  <div className="size-item">{item}</div>
+                  <div className={`size-item ${size === item ? `size-item__active` : ``}`} onClick={() => handleSize(item)}>{item}</div>
                 ))}
               </div>
             </div>

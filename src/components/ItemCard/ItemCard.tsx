@@ -5,7 +5,7 @@ type CardItemProps = {
     imageUrl: string[];
     price: string;
     brand: string;
-    size: number[];
+    size: string[];
 }
 
 const ItemCard: React.FC<CardItemProps> = ({title, imageUrl, price, size}) => {

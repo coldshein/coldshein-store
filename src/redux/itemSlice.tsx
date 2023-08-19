@@ -8,7 +8,7 @@ export interface Item {
   sex: string;
   price: string;
   brand: string;
-  size: number[];
+  size: string[];
   imageUrl: string[];
   link: string;
   type: string;

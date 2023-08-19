@@ -1,18 +1,18 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { fetchShopItems } from "../../redux/itemSlice";
 
 const Brands: React.FC = () => {
-  const [designers, setDesigners] = React.useState<string[]>([]);
-  const fetchDesigners = async () => {
-    const { data } = await axios.get("http://localhost:3001/designers");
-    setDesigners(data);
-  };
-
+  const dispatch = useDispatch();
+  const items = useSelector((state: RootState) => state.shopItems.items )
   React.useEffect(() => {
-    fetchDesigners();
+    dispatch(fetchShopItems() as any);
   }, []);
-  const sortedDesigners = designers.sort((a, b) => a.localeCompare(b));
+  
+  const designers = items.map((obj) => obj.brand).sort((a,b) => a.localeCompare(b));
 
   return (
     <div className="main-block">
@@ -22,8 +22,8 @@ const Brands: React.FC = () => {
           <div className="brands-title">Designers</div>
           <div className="brands-list">
             <ul>
-              {sortedDesigners
-                ? sortedDesigners.map((item) => (
+              {designers
+                ? designers.map((item) => (
                     <li>
                       <Link
                         to={`/collections/${item.toLowerCase().replace(/[\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]+/g, '-')}`}
