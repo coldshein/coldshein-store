@@ -90,28 +90,7 @@
     }
 
   ],
-  "designers": [
-   "Nike",
-   "Maison Margiela",
-   "Dr. Martens",
-   "Dickies",
-   "Carrhart WIP",
-   "New Balance",
-   "Polar Co.",
-    "HUF",
-    "Pleasures",
-    "Oakley",
-    "Asics",
-    "Converse",
-    "Maison Mihara Yasuhiro",
-    "A-COLD-WALL",
-    "BBC",
-    "Salomon",
-    "Vans",
-    "Adidas",
-    "EastPak",
-    "A Bathing Ape",
-    "CDG",
-    "Casio"
+  "cart": [
+    
   ]
 }

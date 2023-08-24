@@ -1,13 +1,25 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 
+
+
+interface cartItem  {
+    price: string,
+    id: string,
+    title: string,
+    size: string,
+    brand: string,
+    imageUrl: string[],
+    count?: number,
+    addedDate: string,
+}
 interface cartState {
     openCart: boolean,
     closeCart: boolean,
-    items: [],
+    items: cartItem[],
     totalPrice: number;
 }
 
-const initialState: cartState= {
+const initialState: cartState = {
     openCart: false,
     closeCart: false,
     items: [],
@@ -25,19 +37,16 @@ export const cartSlice = createSlice({
         setCloseCart: (state) =>{
             state.openCart =  false;
         },
-        addItem: (state, action: PayloadAction) => {
-            // const findItem = state.items.find((item) => item.id === action.payload.id)
-            // if(findItem){
-            //     findItem.count++;
-            // } else {
-            //     state.items.push({
-            //         ...action.payload,
-            //         count: 1,
-            //     })
-            // }
-        }
+        addItem: (state, action: PayloadAction<cartItem>) => {
+            state.items.push({
+                ...action.payload,
+            })
+        },
+        removeItem: (state, action: PayloadAction<string>) =>{
+            state.items = state.items.filter((item) => item.addedDate !== action.payload )
+        } 
     }
 })
 
-export const { setOpenCart, setCloseCart} = cartSlice.actions;
+export const { setOpenCart, setCloseCart, addItem, removeItem} = cartSlice.actions;
 export default cartSlice.reducer;

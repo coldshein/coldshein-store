@@ -1,12 +1,15 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/cartSlice";
 
 type itemParams = {
   id: string;
 };
 
 const FullCard: React.FC = () => {
+  const disptatch = useDispatch();
   const [items, setItems] = React.useState<{
     id: string;
     price: string;
@@ -17,8 +20,11 @@ const FullCard: React.FC = () => {
     sex: string;
     type: string;
   }>();
-  const [size, setSize] = React.useState('');
+
+  const [size, setSize] = React.useState("");
+
   const { id } = useParams<itemParams>();
+
   const fetchOneItem = async (id: any) => {
     const { data } = await axios.get(`http://localhost:3001/items/${id}`);
     setItems(data);
@@ -28,13 +34,31 @@ const FullCard: React.FC = () => {
   }, []);
 
   const handleSize = (size: any) => {
-    setSize(size)
-  }
-  console.log(size);
+    setSize(size);
+  };
 
   if (!items) {
     return <>Loading...</>;
   }
+  const addToCart = () => {
+    if (items) {
+      if (!size) {
+        alert("Choose your size");
+      } else {
+        const addedItem = {
+          id: items.id,
+          title: items.title,
+          size: size,
+          brand: items.brand,
+          imageUrl: items.imageUrl,
+          price: items.price,
+          addedDate: new Date().toISOString()
+        };
+        disptatch(addItem(addedItem));
+        console.log(addedItem);
+      }
+    }
+  };
 
   return (
     <div className="full-card">
@@ -44,10 +68,14 @@ const FullCard: React.FC = () => {
           <Link to={`/items/${id}`}>{items.title}</Link>
         </div>
         <div className="full-card__inner">
-          <div className={items.imageUrl.length === 1 ? `photo-block` : `photo-list`}>
+          <div
+            className={
+              items.imageUrl.length === 1 ? `photo-block` : `photo-list`
+            }
+          >
             {items.imageUrl.map((url, index) => (
               <img key={index} src={url} alt={items.title} />
-            ))} 
+            ))}
           </div>
           <div className="item-info">
             <div className="item-brand">{items.brand}</div>
@@ -60,11 +88,20 @@ const FullCard: React.FC = () => {
               Size:
               <div className="item-sizes__block">
                 {items.size.map((item) => (
-                  <div className={`size-item ${size === item ? `size-item__active` : ``}`} onClick={() => handleSize(item)}>{item}</div>
+                  <div
+                    className={`size-item ${
+                      size === item ? `size-item__active` : ``
+                    }`}
+                    onClick={() => handleSize(item)}
+                  >
+                    {item}
+                  </div>
                 ))}
               </div>
             </div>
-            <button className="add-to-bag">add to bag</button>
+            <button className="add-to-bag" onClick={addToCart}>
+              add to bag
+            </button>
           </div>
         </div>
       </div>
