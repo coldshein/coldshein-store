@@ -7,7 +7,16 @@
       "price": "$130",
       "brand": "Nike",
       "link": "nike",
-      "size": ["39","40","41","42","43","44","45","46"],
+      "size": [
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46"
+      ],
       "type": "Shoes",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0012_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090632",
@@ -24,7 +33,16 @@
       "price": "$340",
       "brand": "Maison Mihara Yasuhiro",
       "link": "maison-mihara-yasuhiro",
-      "size": ["39","40","41","42","43","44","45","46"],
+      "size": [
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46"
+      ],
       "type": "Shoes",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0045_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440497",
@@ -42,7 +60,11 @@
       "brand": "A Bathing Ape",
       "link": "a-bathing-ape",
       "size": [
-        "XS", "S", "M", "L", "XL"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "type": "T-shirt",
       "imageUrl": [
@@ -56,7 +78,13 @@
       "price": "$219",
       "brand": "A-COLD-WALL",
       "link": "a-cold-wall",
-      "size": [ "XS", "S", "M", "L", "XL"],
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "type": "Hoodie",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0008_A-COLD-WALL_ARTISAN_FIGURE_PRINT_HOODIE_MORTAR-GREY_ACWMW039_fd9edb05-c9f9-4179-a424-6e0cc3a3d778_1100x.jpg?v=1620326874"
@@ -69,7 +97,13 @@
       "price": "$60",
       "brand": "BBC",
       "link": "bbc",
-      "size": [ "XS", "S", "M", "L", "XL"],
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "type": "T-shirt",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0042_BBC-BB-SCRIBBLE-SS-TEE-BLACK-831-6209_1100x.jpg?v=1691518174"
@@ -82,15 +116,21 @@
       "price": "$340",
       "brand": "Converse",
       "link": "converse",
-      "size": ["39","40","41","42","43","44","45","46"],
+      "size": [
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46"
+      ],
       "type": "Shoes",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0000_CONVERSE-CHUCK-70-PLUS-HI-SQUIRREL-FRIEND_NAVY-A02871C_1100x.jpg?"
       ]
     }
-
   ],
-  "cart": [
-    
-  ]
+  "cart": []
 }

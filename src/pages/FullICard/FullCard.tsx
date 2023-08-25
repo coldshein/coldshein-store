@@ -2,14 +2,14 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../redux/cartSlice";
+import { addItem, postCartItem, setOpenCart } from "../../redux/cartSlice";
 
 type itemParams = {
   id: string;
 };
 
 const FullCard: React.FC = () => {
-  const disptatch = useDispatch();
+  const dispatch = useDispatch() as any;
   const [items, setItems] = React.useState<{
     id: string;
     price: string;
@@ -46,15 +46,19 @@ const FullCard: React.FC = () => {
         alert("Choose your size");
       } else {
         const addedItem = {
-          id: items.id,
+          id: items.id + size,
           title: items.title,
           size: size,
           brand: items.brand,
           imageUrl: items.imageUrl,
           price: items.price,
-          addedDate: new Date().toISOString()
-        };
-        disptatch(addItem(addedItem));
+          addedDate: new Date().toISOString(),
+          count: 1,
+        } as any;
+
+        dispatch(addItem(addedItem));
+        dispatch(postCartItem(addedItem));
+        dispatch(setOpenCart())
         console.log(addedItem);
       }
     }
@@ -88,7 +92,7 @@ const FullCard: React.FC = () => {
               Size:
               <div className="item-sizes__block">
                 {items.size.map((item) => (
-                  <div
+                  <div key={item}
                     className={`size-item ${
                       size === item ? `size-item__active` : ``
                     }`}

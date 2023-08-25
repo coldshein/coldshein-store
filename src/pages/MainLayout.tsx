@@ -11,9 +11,7 @@ const MainLayout = () => {
     <div className="app-container">
       <Header />
       <Outlet />
-      {
-        openCart && <Cart />
-      }
+      <Cart/>
     </div>
   );
 };
