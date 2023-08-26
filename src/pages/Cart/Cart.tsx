@@ -41,6 +41,7 @@ const Cart: React.FC = () => {
             <EmptyCart />
           )}
         </div>
+        <div className="black-btn cart-btn">checkout</div>
       </div>
     </section>
   );

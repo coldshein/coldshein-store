@@ -3,10 +3,17 @@ import CardItem from "../../components/ItemCard/ItemCard";
 import Sort from "../../components/Sort/Sort";
 import ItemList from "../../components/ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const {sex} = useParams();
-  console.log(sex);
+  const items = useSelector((state: RootState) => state.shopItems.items )
+  const allCategories = items.map((item) => item.category);
+  const categories = new Set<string>(allCategories);
+  const category = Array.from(categories)
+  
   return (
     <section className="home">
       <div className="container">
@@ -18,9 +25,9 @@ const Home = () => {
                 <div className="list-info__title">Newness</div>
                 <nav className="list-info__nav">
                   <ul>
-                    <li>Accessories</li>
-                    <li>Clothing</li>
-                    <li>Footwear</li>
+                    {
+                      category.map((item: string) => <li><Link to={`${sex ? `/${sex}/${item}` : `/${item}`}`}>{item}</Link></li> )
+                    }
                   </ul>
                 </nav>
               </div>

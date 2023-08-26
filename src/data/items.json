@@ -18,6 +18,7 @@
         "46"
       ],
       "type": "Shoes",
+      "category": "footwear",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0012_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090632",
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0013_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090633",
@@ -44,6 +45,7 @@
         "46"
       ],
       "type": "Shoes",
+      "category": "footwear",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0045_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440497",
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0046_MAISON-MIHARA-YASUHIRO-LEATHER-LOW-TOP-LIGHT-BLUE-A01FW702_1100x.jpg?v=1691440498",
@@ -67,6 +69,7 @@
         "XL"
       ],
       "type": "T-shirt",
+      "category": "clothing",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0023_BAPE-BIG-HEAD-SS-TEE-WHITE_MULTI-1J80110023_1100x.jpg?v=1690404867"
       ]
@@ -75,7 +78,7 @@
       "id": 4,
       "title": "A-COLD-WALL* OVERDYED PRINT HOODIE",
       "sex": "men",
-      "price": "$219",
+      "price": "$14",
       "brand": "A-COLD-WALL",
       "link": "a-cold-wall",
       "size": [
@@ -86,6 +89,7 @@
         "XL"
       ],
       "type": "Hoodie",
+      "category": "clothing",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0008_A-COLD-WALL_ARTISAN_FIGURE_PRINT_HOODIE_MORTAR-GREY_ACWMW039_fd9edb05-c9f9-4179-a424-6e0cc3a3d778_1100x.jpg?v=1620326874"
       ]
@@ -105,6 +109,7 @@
         "XL"
       ],
       "type": "T-shirt",
+      "category": "clothing",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0042_BBC-BB-SCRIBBLE-SS-TEE-BLACK-831-6209_1100x.jpg?v=1691518174"
       ]
@@ -127,10 +132,68 @@
         "46"
       ],
       "type": "Shoes",
+      "category": "footwear",
       "imageUrl": [
         "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0000_CONVERSE-CHUCK-70-PLUS-HI-SQUIRREL-FRIEND_NAVY-A02871C_1100x.jpg?"
       ]
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "4M",
+      "title": "A-COLD-WALL* OVERDYED PRINT HOODIE",
+      "size": "M",
+      "brand": "A-COLD-WALL",
+      "imageUrl": [
+        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0008_A-COLD-WALL_ARTISAN_FIGURE_PRINT_HOODIE_MORTAR-GREY_ACWMW039_fd9edb05-c9f9-4179-a424-6e0cc3a3d778_1100x.jpg?v=1620326874"
+      ],
+      "price": "$219",
+      "addedDate": "2023-08-26T21:15:05.994Z",
+      "count": 1
+    },
+    {
+      "id": "141",
+      "title": "NIKE AIR FORCE 1 LV8 XLD",
+      "size": "41",
+      "brand": "Nike",
+      "imageUrl": [
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0012_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090632",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0013_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090633",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0014_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090635",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0010_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090629",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0011_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090630"
+      ],
+      "price": "$130",
+      "addedDate": "2023-08-26T21:15:12.326Z",
+      "count": 1
+    },
+    {
+      "id": "4S",
+      "title": "A-COLD-WALL* OVERDYED PRINT HOODIE",
+      "size": "S",
+      "brand": "A-COLD-WALL",
+      "imageUrl": [
+        "https://www.onenessboutique.com/cdn/shop/products/ONENESS_0008_A-COLD-WALL_ARTISAN_FIGURE_PRINT_HOODIE_MORTAR-GREY_ACWMW039_fd9edb05-c9f9-4179-a424-6e0cc3a3d778_1100x.jpg?v=1620326874"
+      ],
+      "price": "$219",
+      "addedDate": "2023-08-26T21:19:41.011Z",
+      "count": 1
+    },
+    {
+      "id": "143",
+      "title": "NIKE AIR FORCE 1 LV8 XLD",
+      "size": "43",
+      "brand": "Nike",
+      "imageUrl": [
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0012_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090632",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0013_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090633",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0014_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090635",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0010_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090629",
+        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0011_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090630"
+      ],
+      "price": "$130",
+      "addedDate": "2023-08-26T21:50:08.576Z",
+      "count": 1
+    }
+  ]
 }

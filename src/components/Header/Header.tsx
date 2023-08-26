@@ -50,7 +50,7 @@ const Header = () => {
             </ul>
           </nav>
           <Link className="logo" to="/">
-            COLDSHEIN
+            NOIROVERCLOTHES
           </Link>
           <nav className="header-nav">
             <ul>

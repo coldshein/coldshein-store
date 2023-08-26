@@ -12,6 +12,7 @@ export interface Item {
   imageUrl: string[];
   link: string;
   type: string;
+  category: string;
 }
 
 export interface ItemState {
@@ -56,19 +57,33 @@ export const fetchCollections = createAsyncThunk<Item[], string | void>(
   }
 );
 
-export const fetchSexCollections = createAsyncThunk<Item[], string | void>(
-  "items/fetchSexCollections",
-  async (sex, {dispatch}) => {
+export const fetchSexCollections = createAsyncThunk<
+  Item[],
+  { sex?: string; category?: string }
+>("items/fetchSexCollections", async ({ sex, category }, { dispatch }) => {
+  try {
+    const url = category
+      ? `http://localhost:3001/items?sex=${sex}&category=${category}`
+      : `http://localhost:3001/items?sex=${sex}`;
+    const { data } = await axios.get(url);
+    dispatch(setItems(data));
+    return data;
+  } catch (error) {}
+});
+
+export const fetchCategoryCollections = createAsyncThunk<Item[], string | void>(
+  "items/fetchCategoryCollections",
+  async (category, { dispatch }) => {
     try {
-      const url = `http://localhost:3001/items?sex=${sex}`;
-      const {data} = await axios.get(url);
+      const url = `http://localhost:3001/items?category=${category}`;
+      const { data } = await axios.get(url);
       dispatch(setItems(data));
       return data;
     } catch (error) {
-      
+      throw error;
     }
   }
-)
+);
 
 export const itemSlice = createSlice({
   name: "shopItem",

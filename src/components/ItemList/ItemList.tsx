@@ -3,6 +3,7 @@ import CardItem from "../ItemCard/ItemCard";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import {
+  fetchCategoryCollections,
   fetchCollections,
   fetchSexCollections,
   fetchShopItems,
@@ -14,10 +15,11 @@ type QueryType = {
   query: string;
   link: string;
   sex: string;
+  category: string;
 };
 
 const ItemList = () => {
-  const { query, link, sex } = useParams<QueryType>();
+  const { query, link, sex, category } = useParams<QueryType>();
   const { items, loading } = useSelector((state: RootState) => state.shopItems);
   const dispatch: Dispatch<AnyAction> = useDispatch();
 
@@ -27,11 +29,16 @@ const ItemList = () => {
     if (link) {
       dispatch(fetchCollections(link) as any);
     } else if (sex) {
-      dispatch(fetchSexCollections(sex) as any);
+      dispatch(fetchSexCollections({ sex }) as any);
+      if (category) {
+        dispatch(fetchSexCollections({ sex, category }) as any);
+      }
+    } else if (category) {
+      dispatch(fetchCategoryCollections(category) as any);
     } else {
       dispatch(fetchShopItems(query) as any);
     }
-  }, [link, query, sex]);
+  }, [link, query, sex, category]);
   return (
     <div className="item-list">
       {isItemsLoading ? (

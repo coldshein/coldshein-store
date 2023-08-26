@@ -458,7 +458,7 @@
   border: 2px solid rgb(0, 0, 0);
 }
 
-.add-to-bag {
+.black-btn {
   font-size: 22px;
   font-weight: 700;
   color: #fff;
@@ -535,6 +535,11 @@
     height: 100%;
     object-fit: contain;
   }
+}
+.cart-btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 // CARTITEM++++++++++++++++++++++++
 .cart-item{

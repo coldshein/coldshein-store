@@ -103,7 +103,7 @@ const FullCard: React.FC = () => {
                 ))}
               </div>
             </div>
-            <button className="add-to-bag" onClick={addToCart}>
+            <button className="black-btn" onClick={addToCart}>
               add to bag
             </button>
           </div>
