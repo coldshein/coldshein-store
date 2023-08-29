@@ -75,7 +75,7 @@ const Header = () => {
               />
               <label htmlFor="search">Search</label>
               <img
-                src="assets/icons/search-icon.svg"
+                src="/assets/icons/search-icon.svg"
                 className="search-icon"
                 alt=""
               />
@@ -83,13 +83,13 @@ const Header = () => {
                 <div className="search-list" onClick={closeSearch}>
                   <Link to={`/search/${searchValue}`}>
                     Search for "{searchValue}"
-                    <img src="assets/icons/arrowRight.svg" alt="" />
+                    <img src="/assets/icons/arrowRight.svg" alt="" />
                   </Link>
                 </div>
               )}
             </div>
             <div onClick={closeSearch} className="close-search">
-              <img src="assets/icons/close.svg" alt="" />
+              <img src="/assets/icons/close.svg" alt="" />
             </div>
           </div>
         </div>

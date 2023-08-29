@@ -7,7 +7,7 @@ import {
 import axios from "axios";
 
 interface cartItem {
-  price: string;
+  price: number;
   id: string;
   title: string;
   size: string;
@@ -93,6 +93,9 @@ export const cartSlice = createSlice({
         ...action.payload,
         count: 1,
       });
+      state.totalPrice = state.items.reduce((sum, obj) => {
+        return (obj.price * obj.count) + sum;
+     }, 0)
     },
     setItems: (state, action: PayloadAction<cartItem[]>) => {
       state.items = action.payload;

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Cart: React.FC = () => {
   const dispatch = useDispatch() as any;
-  const { items, openCart } = useSelector(
+  const { items, openCart, totalPrice } = useSelector(
     (state: RootState) => state.cartItems
   );
   const onClickCloseCart = () => {
@@ -24,24 +24,28 @@ const Cart: React.FC = () => {
           <img src="/assets/icons/close.svg" alt="" />
         </div>
         <div className="cart-title">Your items</div>
-        <div className="cart-list">
-          {items.length ? (
-            items.map((item, index) => (
-              <CartItem
-                key={item.title + index}
-                title={item.title}
-                size={item.size}
-                imageUrl={item.imageUrl}
-                price={item.price}
-                addedDate={item.addedDate}
-                id={item.id}
-              />
-            ))
-          ) : (
-            <EmptyCart />
-          )}
-        </div>
-        <div className="black-btn cart-btn">checkout</div>
+        {items.length > 0 ? (
+          <>
+            <div className="cart-list">
+              {items.map((item, index) => (
+                <CartItem
+                  key={item.title + index}
+                  title={item.title}
+                  size={item.size}
+                  imageUrl={item.imageUrl}
+                  price={item.price}
+                  addedDate={item.addedDate}
+                  id={item.id}
+                />
+              ))}
+            </div>
+
+            <span className="cart-total">Total: ${totalPrice}.00</span>
+            <div className="black-btn cart-btn">checkout</div>
+          </>
+        ) : (
+          <EmptyCart />
+        )}
       </div>
     </section>
   );

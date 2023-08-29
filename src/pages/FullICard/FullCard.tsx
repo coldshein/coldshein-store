@@ -87,7 +87,7 @@ const FullCard: React.FC = () => {
             <div className="item-type">
               TYPE: {items.sex}'s {items.type}
             </div>
-            <div className="item-price">{items.price}.00 USD</div>
+            <div className="item-price">${items.price}.00 USD</div>
             <div className="item-sizes">
               Size:
               <div className="item-sizes__block">

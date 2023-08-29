@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 interface cartItemProps {
   title: string;
   size: string;
-  price: string;
+  price: number;
   imageUrl: string[];
   addedDate: string;
   id: string;
@@ -62,7 +62,7 @@ const CartItem: React.FC<cartItemProps> = ({
       <div className="cart-item__remove" onClick={onClickRemove}>
         <img src="/assets/icons/delete.svg" alt="" />
       </div>
-      <div className="cart-item__price">{price}.00</div>
+      <div className="cart-item__price">${price}.00</div>
     </div>
   );
 };

@@ -19,7 +19,7 @@ function App() {
         <Route path="/collection/:sex" element={<Home/>}/>
         <Route path="/:category" element={<Home/>}/>
         <Route path="/:sex/:category" element={<Home/>}/>
-        <Route path="/items/:id" element={<FullCard />} />
+        <Route  path="/items/:id" element={<FullCard />} />
         <Route path="/search/:query" element={<SearchResult />} />
       </Route>
     </Routes>
