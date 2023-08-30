@@ -4,18 +4,11 @@ import { Link } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import { setSearchValue } from "../../redux/itemSlice";
 import { setOpenCart } from "../../redux/cartSlice";
+import Search from "../Search/Search";
 
-
-
-const Header = () => {
+const Header:React.FC = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
   const dispatch = useDispatch();
-  const searchValue = useSelector(
-    (state: RootState) => state.shopItems.searchValue
-  );
-  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchValue(event.target.value));
-  };
 
   React.useEffect(() => {
     dispatch(setSearchValue(""));
@@ -29,8 +22,6 @@ const Header = () => {
   const openCart = () => {
     dispatch(setOpenCart());
   };
-
-  
 
   return (
     <header className="header">
@@ -55,45 +46,12 @@ const Header = () => {
           <nav className="header-nav">
             <ul>
               <li onClick={() => setOpenSearch(true)}>search</li>
-              <li onClick={openCart}>
-                cart
-              </li>
+              <li onClick={openCart}>cart</li>
             </ul>
           </nav>
         </div>
       </div>
-      {openSearch ? (
-        <div className="search-modal">
-          <div className="search-block">
-            <div className="search-bar">
-              <input
-                type="text"
-                placeholder=" "
-                onChange={onChangeInput}
-                value={searchValue}
-                id="search"
-              />
-              <label htmlFor="search">Search</label>
-              <img
-                src="/assets/icons/search-icon.svg"
-                className="search-icon"
-                alt=""
-              />
-              {searchValue && (
-                <div className="search-list" onClick={closeSearch}>
-                  <Link to={`/search/${searchValue}`}>
-                    Search for "{searchValue}"
-                    <img src="/assets/icons/arrowRight.svg" alt="" />
-                  </Link>
-                </div>
-              )}
-            </div>
-            <div onClick={closeSearch} className="close-search">
-              <img src="/assets/icons/close.svg" alt="" />
-            </div>
-          </div>
-        </div>
-      ) : null}
+      {openSearch ? <Search closeSearch={closeSearch} /> : ''}
     </header>
   );
 };

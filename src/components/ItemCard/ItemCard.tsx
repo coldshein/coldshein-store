@@ -1,6 +1,6 @@
 import React from 'react'
 
-type CardItemProps = {
+interface ICardItem {
     title: string;
     imageUrl: string[];
     price: string;
@@ -8,9 +8,7 @@ type CardItemProps = {
     size: string[];
 }
 
-const ItemCard: React.FC<CardItemProps> = ({title, imageUrl, price, size}) => {
-
-    
+const ItemCard: React.FC<ICardItem> = ({title, imageUrl, price, size}) => {
     return ( 
         <div className="card-item">
             <div className="card-img">

@@ -22,18 +22,6 @@ const CartItem: React.FC<cartItemProps> = ({
 }) => {
   const dispatch = useDispatch();
 
-  let [quantity, setQuantity] = React.useState(1);
-
-  const addQuantity = () => {
-    setQuantity(++quantity);
-  };
-  const removeQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(--quantity);
-    } else {
-      setQuantity(1);
-    }
-  };
 
   const onClickRemove = () => {
     dispatch(removeCartItem(id) as any);
@@ -50,11 +38,11 @@ const CartItem: React.FC<cartItemProps> = ({
         </Link>
         <div className="cart-item__size">Size: {size}</div>
         <div className="cart-item__counter">
-          <div className="counter" onClick={() => addQuantity()}>
+          <div className="counter">
             +
           </div>
-          <div className="count">{quantity}</div>
-          <div className="counter" onClick={() => removeQuantity()}>
+          <div className="count">1</div>
+          <div className="counter">
             -
           </div>
         </div>

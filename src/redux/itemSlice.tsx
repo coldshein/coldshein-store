@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export interface Item {
+export type ItemType = {
   id: number;
   title: string;
   sex: string;
@@ -16,7 +16,7 @@ export interface Item {
 }
 
 export interface ItemState {
-  items: Item[];
+  items: ItemType[];
   loading: "pending" | "fulfilled" | "rejected";
   searchValue: string;
 }
@@ -27,7 +27,7 @@ const initialState: ItemState = {
   searchValue: "",
 };
 
-export const fetchShopItems = createAsyncThunk<Item[], string | void>(
+export const fetchShopItems = createAsyncThunk<ItemType[], string | void>(
   "items/fetchShopItems",
   async (query, { dispatch }) => {
     try {
@@ -43,7 +43,7 @@ export const fetchShopItems = createAsyncThunk<Item[], string | void>(
   }
 );
 
-export const fetchCollections = createAsyncThunk<Item[], string | void>(
+export const fetchCollections = createAsyncThunk<ItemType[], string | void>(
   "items/fetchShopItems",
   async (link, { dispatch }) => {
     try {
@@ -58,7 +58,7 @@ export const fetchCollections = createAsyncThunk<Item[], string | void>(
 );
 
 export const fetchSexCollections = createAsyncThunk<
-  Item[],
+ItemType[],
   { sex?: string; category?: string }
 >("items/fetchSexCollections", async ({ sex, category }, { dispatch }) => {
   try {
@@ -71,7 +71,7 @@ export const fetchSexCollections = createAsyncThunk<
   } catch (error) {}
 });
 
-export const fetchCategoryCollections = createAsyncThunk<Item[], string | void>(
+export const fetchCategoryCollections = createAsyncThunk<ItemType[], string | void>(
   "items/fetchCategoryCollections",
   async (category, { dispatch }) => {
     try {
@@ -89,7 +89,7 @@ export const itemSlice = createSlice({
   name: "shopItem",
   initialState,
   reducers: {
-    setItems: (state, action: PayloadAction<Item[]>) => {
+    setItems: (state, action: PayloadAction<ItemType[]>) => {
       state.items = action.payload;
     },
     setSearchValue: (state, action: PayloadAction<string>) => {
@@ -102,7 +102,7 @@ export const itemSlice = createSlice({
     });
     builder.addCase(
       fetchShopItems.fulfilled,
-      (state, action: PayloadAction<Item[]>) => {
+      (state, action: PayloadAction<ItemType[]>) => {
         state.loading = "fulfilled";
         state.items = action.payload;
       }

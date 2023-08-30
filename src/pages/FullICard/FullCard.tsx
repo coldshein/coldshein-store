@@ -7,19 +7,21 @@ import { addItem, postCartItem, setOpenCart } from "../../redux/cartSlice";
 type itemParams = {
   id: string;
 };
+interface IFullCard {
+  id: string;
+  price: string;
+  title: string;
+  imageUrl: string[];
+  size: string[];
+  brand: string;
+  sex: string;
+  type: string;
+}
 
 const FullCard: React.FC = () => {
+  
   const dispatch = useDispatch() as any;
-  const [items, setItems] = React.useState<{
-    id: string;
-    price: string;
-    title: string;
-    imageUrl: string[];
-    size: string[];
-    brand: string;
-    sex: string;
-    type: string;
-  }>();
+  const [items, setItems] = React.useState<IFullCard>();
 
   const [size, setSize] = React.useState("");
 
@@ -29,6 +31,7 @@ const FullCard: React.FC = () => {
     const { data } = await axios.get(`http://localhost:3001/items/${id}`);
     setItems(data);
   };
+
   React.useEffect(() => {
     fetchOneItem(id);
   }, []);
@@ -59,7 +62,6 @@ const FullCard: React.FC = () => {
         dispatch(addItem(addedItem));
         dispatch(postCartItem(addedItem));
         dispatch(setOpenCart())
-        console.log(addedItem);
       }
     }
   };
@@ -87,7 +89,7 @@ const FullCard: React.FC = () => {
             <div className="item-type">
               TYPE: {items.sex}'s {items.type}
             </div>
-            <div className="item-price">${items.price}.00 USD</div>
+            <div className="item-price">{items.price}.00 USD</div>
             <div className="item-sizes">
               Size:
               <div className="item-sizes__block">

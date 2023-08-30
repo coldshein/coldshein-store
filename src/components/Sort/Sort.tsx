@@ -1,11 +1,24 @@
 import React from "react";
 
-const Sort = () => {
+type SortType = {
+  name: string;
+  sortProp: string;
+};
+
+const Sort: React.FC = () => {
   const [sort, setSort] = React.useState(false);
+  
+  const sortList: SortType[] = [
+    { name: "date, new to old", sortProp: "date" },
+    { name: "date, old to new", sortProp: "-date" },
+    { name: "price, high to low", sortProp: "price" },
+    { name: "price, low to high", sortProp: "-price" },
+  ];
 
   const openSortList = () => {
     setSort(!sort);
   };
+
   return (
     <>
       <div className="item-sort__list">
@@ -16,10 +29,9 @@ const Sort = () => {
       {sort ? (
         <div className="sort-list">
           <ul>
-            <li>date, new to old</li>
-            <li>date, old to new</li>
-            <li>price, high to low</li>
-            <li>price, low to high</li>
+            {sortList.map((item) => (
+              <li>{item.name}</li>
+            ))}
           </ul>
         </div>
       ) : (

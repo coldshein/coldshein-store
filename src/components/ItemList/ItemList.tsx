@@ -11,18 +11,18 @@ import {
 import { AnyAction, Dispatch } from "@reduxjs/toolkit";
 import { Link, useParams } from "react-router-dom";
 
-type QueryType = {
+export type QueryType = {
   query: string;
   link: string;
   sex: string;
   category: string;
 };
 
-const ItemList = () => {
+const ItemList: React.FC = () => {
   const { query, link, sex, category } = useParams<QueryType>();
-  const { items, loading } = useSelector((state: RootState) => state.shopItems);
   const dispatch: Dispatch<AnyAction> = useDispatch();
-
+  const { items, loading } = useSelector((state: RootState) => state.shopItems);
+  
   const isItemsLoading = loading === "pending";
 
   React.useEffect(() => {
@@ -39,6 +39,7 @@ const ItemList = () => {
       dispatch(fetchShopItems(query) as any);
     }
   }, [link, query, sex, category]);
+  
   return (
     <div className="item-list">
       {isItemsLoading ? (

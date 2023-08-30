@@ -7,33 +7,40 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { Link } from "react-router-dom";
 
-const Home = () => {
-  const {sex} = useParams();
-  const items = useSelector((state: RootState) => state.shopItems.items )
+const Home:React.FC = () => {
+  const { sex } = useParams();
+  const items = useSelector((state: RootState) => state.shopItems.items);
+
   const allCategories = items.map((item) => item.category);
   const categories = new Set<string>(allCategories);
-  const category = Array.from(categories)
-  
+  const category = Array.from(categories);
+
   return (
     <section className="home">
       <div className="container">
         <div className="home-inner">
-          <div className="page-header">Home * Collection * {`${sex ? sex : ''}`} </div>
+          <div className="page-header">
+            Home * Collection * {`${sex ? sex : ""}`}{" "}
+          </div>
           <div className="main-block">
             <div className="main-block__inner">
               <div className="list-info">
                 <div className="list-info__title">Newness</div>
                 <nav className="list-info__nav">
                   <ul>
-                    {
-                      category.map((item: string) => <li><Link to={`${sex ? `/${sex}/${item}` : `/${item}`}`}>{item}</Link></li> )
-                    }
+                    {category.map((item: string) => (
+                      <li>
+                        <Link to={`${sex ? `/${sex}/${item}` : `/${item}`}`}>
+                          {item}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </nav>
               </div>
               <div className="item-block">
                 <Sort />
-                <ItemList/>
+                <ItemList />
               </div>
             </div>
           </div>

@@ -8,6 +8,7 @@ import { fetchShopItems } from "../../redux/itemSlice";
 const Brands: React.FC = () => {
   const dispatch = useDispatch();
   const items = useSelector((state: RootState) => state.shopItems.items )
+  
   React.useEffect(() => {
     dispatch(fetchShopItems() as any);
   }, []);

@@ -6,7 +6,7 @@ import {
 } from "@reduxjs/toolkit";
 import axios from "axios";
 
-interface cartItem {
+type CartItemType = {
   price: number;
   id: string;
   title: string;
@@ -17,21 +17,21 @@ interface cartItem {
   addedDate: string;
 }
 
-interface cartState {
+interface ICartState {
   openCart: boolean;
   closeCart: boolean;
-  items: cartItem[];
+  items: CartItemType[];
   totalPrice: number;
 }
 
-const initialState: cartState = {
+const initialState: ICartState = {
   openCart: false,
   closeCart: false,
   items: [],
   totalPrice: 0,
 };
 
-export const postCartItem = createAsyncThunk<cartItem, AnyAction>(
+export const postCartItem = createAsyncThunk<CartItemType, AnyAction>(
   "cartItems/postCartItem",
   async (addedItem, { rejectWithValue }) => {
     try {
@@ -59,7 +59,7 @@ export const removeCartItem = createAsyncThunk<string | void, string>(
   }
 );
 
-export const fetchCartItems = createAsyncThunk<cartItem[] | void>(
+export const fetchCartItems = createAsyncThunk<CartItemType | void>(
   "cartItems/fetchCartItems",
   async (_, { dispatch }) => {
     try {
@@ -82,7 +82,7 @@ export const cartSlice = createSlice({
     setCloseCart: (state) => {
       state.openCart = false;
     },
-    addItem: (state, action: PayloadAction<cartItem>) => {
+    addItem: (state, action: PayloadAction<CartItemType>) => {
       const existingItem = state.items.find(
         (item) => item.id === action.payload.id
       );
@@ -97,7 +97,7 @@ export const cartSlice = createSlice({
         return (obj.price * obj.count) + sum;
      }, 0)
     },
-    setItems: (state, action: PayloadAction<cartItem[]>) => {
+    setItems: (state, action: PayloadAction<CartItemType[]>) => {
       state.items = action.payload;
     },
     removeItem: (state, action: PayloadAction<string>) => {
