@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addItem, postCartItem, setOpenCart } from "../../redux/cartSlice";
+import styles from './FullCard.module.scss'
 
 type itemParams = {
   id: string;
@@ -67,36 +68,36 @@ const FullCard: React.FC = () => {
   };
 
   return (
-    <div className="full-card">
+    <div>
       <div className="container">
         <div className="page-header">
           <Link to="/">Home</Link> *{" "}
           <Link to={`/items/${id}`}>{items.title}</Link>
         </div>
-        <div className="full-card__inner">
+        <div className={styles.inner}>
           <div
             className={
-              items.imageUrl.length === 1 ? `photo-block` : `photo-list`
+              items.imageUrl.length === 1 ? styles.photo_block : styles.photo_list
             }
           >
             {items.imageUrl.map((url, index) => (
               <img key={index} src={url} alt={items.title} />
             ))}
           </div>
-          <div className="item-info">
-            <div className="item-brand">{items.brand}</div>
-            <div className="item-title">{items.title}</div>
-            <div className="item-type">
+          <div className={styles.info}>
+            <div className={styles.brand}>{items.brand}</div>
+            <div className={styles.title}>{items.title}</div>
+            <div className={styles.type}>
               TYPE: {items.sex}'s {items.type}
             </div>
-            <div className="item-price">{items.price}.00 USD</div>
-            <div className="item-sizes">
+            <div className={styles.price}>{items.price}.00 USD</div>
+            <div className={styles.sizes}>
               Size:
-              <div className="item-sizes__block">
+              <div className={styles.size}>
                 {items.size.map((item) => (
                   <div key={item}
-                    className={`size-item ${
-                      size === item ? `size-item__active` : ``
+                    className={` ${styles.size_item} ${
+                      size === item ? styles.active : ``
                     }`}
                     onClick={() => handleSize(item)}
                   >
@@ -105,7 +106,7 @@ const FullCard: React.FC = () => {
                 ))}
               </div>
             </div>
-            <button className="black-btn" onClick={addToCart}>
+            <button className={styles.button} onClick={addToCart}>
               add to bag
             </button>
           </div>

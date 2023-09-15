@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { fetchShopItems } from "../../redux/itemSlice";
+import styles from './Brands.module.scss'
 
 const Brands: React.FC = () => {
   const dispatch = useDispatch();
@@ -19,9 +20,9 @@ const Brands: React.FC = () => {
     <div className="main-block">
       <div className="container">
         <div className="page-header">home * designers</div>
-        <div className="brands-block">
-          <div className="brands-title">Designers</div>
-          <div className="brands-list">
+        <div className={styles.block}>
+          <div className={styles.title}>Designers</div>
+          <div className={styles.list}>
             <ul>
               {designers
                 ? designers.map((item) => (

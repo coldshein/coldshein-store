@@ -32,8 +32,8 @@ export const fetchShopItems = createAsyncThunk<ItemType[], string | void>(
   async (query, { dispatch }) => {
     try {
       const url = query
-        ? `http://localhost:3001/items?q=${query}`
-        : `http://localhost:3001/items`;
+        ? `https://650464d5c8869921ae24f99f.mockapi.io/items?title=${query}`
+        : `https://650464d5c8869921ae24f99f.mockapi.io/items`;
       const { data } = await axios.get(url);
       dispatch(setItems(data));
       return data;
@@ -47,7 +47,7 @@ export const fetchCollections = createAsyncThunk<ItemType[], string | void>(
   "items/fetchShopItems",
   async (link, { dispatch }) => {
     try {
-      const url = `http://localhost:3001/items?link=${link}`;
+      const url = `https://650464d5c8869921ae24f99f.mockapi.io/items?filter=${link}`;
       const { data } = await axios.get(url);
       dispatch(setItems(data));
       return data;
@@ -63,8 +63,8 @@ ItemType[],
 >("items/fetchSexCollections", async ({ sex, category }, { dispatch }) => {
   try {
     const url = category
-      ? `http://localhost:3001/items?sex=${sex}&category=${category}`
-      : `http://localhost:3001/items?sex=${sex}`;
+      ? `https://650464d5c8869921ae24f99f.mockapi.io/items?sex=${sex}&category=${category}`
+      : `https://650464d5c8869921ae24f99f.mockapi.io/items?sex=${sex}`;
     const { data } = await axios.get(url);
     dispatch(setItems(data));
     return data;
@@ -75,7 +75,7 @@ export const fetchCategoryCollections = createAsyncThunk<ItemType[], string | vo
   "items/fetchCategoryCollections",
   async (category, { dispatch }) => {
     try {
-      const url = `http://localhost:3001/items?category=${category}`;
+      const url = `https://650464d5c8869921ae24f99f.mockapi.io/items?category=${category}`;
       const { data } = await axios.get(url);
       dispatch(setItems(data));
       return data;

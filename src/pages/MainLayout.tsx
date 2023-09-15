@@ -4,12 +4,13 @@ import { Outlet } from "react-router-dom";
 import Cart from "./Cart/Cart";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import BurgerMenu from "../components/BurgerMenu/BurgerMenu";
 
 const MainLayout = () => {
-  const openCart = useSelector((state: RootState) => state.cartItems.openCart )
   return (
     <div className="app-container">
       <Header />
+      <BurgerMenu/>
       <Outlet />
       <Cart/>
     </div>

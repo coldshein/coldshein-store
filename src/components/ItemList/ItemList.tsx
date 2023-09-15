@@ -10,6 +10,8 @@ import {
 } from "../../redux/itemSlice";
 import { AnyAction, Dispatch } from "@reduxjs/toolkit";
 import { Link, useParams } from "react-router-dom";
+import HomeSkeleton from "../../Skeletons/HomeSkeleton";
+import styles from './ItemList.module.scss'
 
 export type QueryType = {
   query: string;
@@ -22,8 +24,6 @@ const ItemList: React.FC = () => {
   const { query, link, sex, category } = useParams<QueryType>();
   const dispatch: Dispatch<AnyAction> = useDispatch();
   const { items, loading } = useSelector((state: RootState) => state.shopItems);
-  
-  const isItemsLoading = loading === "pending";
 
   React.useEffect(() => {
     if (link) {
@@ -41,9 +41,11 @@ const ItemList: React.FC = () => {
   }, [link, query, sex, category]);
   
   return (
-    <div className="item-list">
-      {isItemsLoading ? (
-        "Loading"
+    <div className={styles.list}>
+      {loading === "pending" ? (
+        [...Array(8)].map((item, index) => (
+          <HomeSkeleton key={index}/>
+        ) )
       ) : query ? (
         items.length > 0 ? (
           items.map((item) => (

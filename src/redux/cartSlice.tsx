@@ -36,7 +36,7 @@ export const postCartItem = createAsyncThunk<CartItemType, AnyAction>(
   async (addedItem, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/cart`,
+        `https://650464d5c8869921ae24f99f.mockapi.io/cart`,
         addedItem
       );
       console.log(data);
@@ -51,7 +51,7 @@ export const removeCartItem = createAsyncThunk<string | void, string>(
   "cartItems/removeCartItem",
   async (id) => {
     try {
-      const { data } = await axios.delete(`http://localhost:3001/cart/${id}`);
+      const { data } = await axios.delete(`https://650464d5c8869921ae24f99f.mockapi.io/cart/${id}`);
       return data;
     } catch (error) {
       throw error;
@@ -63,7 +63,7 @@ export const fetchCartItems = createAsyncThunk<CartItemType | void>(
   "cartItems/fetchCartItems",
   async (_, { dispatch }) => {
     try {
-      const { data } = await axios.get("http://localhost:3001/cart");
+      const { data } = await axios.get("https://650464d5c8869921ae24f99f.mockapi.io/cart");
       dispatch(setItems(data));
       return data;
     } catch (error) {

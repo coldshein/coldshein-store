@@ -138,22 +138,5 @@
       ]
     }
   ],
-  "cart": [
-    {
-      "id": "144",
-      "title": "NIKE AIR FORCE 1 LV8 XLD",
-      "size": "44",
-      "brand": "Nike",
-      "imageUrl": [
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0012_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090632",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0013_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090633",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0014_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090635",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0010_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090629",
-        "https://www.onenessboutique.com/cdn/shop/files/ONENESS_0011_NIKE-AIR-FORCE-1-LV8-WHITE_SAIL_PLATNIUM-TINT-CW7584-100_1100x.jpg?v=1691090630"
-      ],
-      "price": "130",
-      "addedDate": "2023-08-29T20:58:08.058Z",
-      "count": 1
-    }
-  ]
+  "cart": []
 }

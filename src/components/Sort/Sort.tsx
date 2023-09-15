@@ -1,4 +1,5 @@
 import React from "react";
+import styles from './Sort.module.scss'
 
 type SortType = {
   name: string;
@@ -21,13 +22,13 @@ const Sort: React.FC = () => {
 
   return (
     <>
-      <div className="item-sort__list">
-        <div className="sort" onClick={openSortList}>
+      <div className={styles.sort}>
+        <div className={styles.item} onClick={openSortList}>
           date, new to old
         </div>
       </div>
       {sort ? (
-        <div className="sort-list">
+        <div className={styles.list}>
           <ul>
             {sortList.map((item) => (
               <li>{item.name}</li>

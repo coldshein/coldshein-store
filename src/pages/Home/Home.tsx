@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { Link } from "react-router-dom";
+import styles from './Home.module.scss'
 
 const Home:React.FC = () => {
   const { sex } = useParams();
@@ -16,20 +17,20 @@ const Home:React.FC = () => {
   const category = Array.from(categories);
 
   return (
-    <section className="home">
+    <section>
       <div className="container">
-        <div className="home-inner">
-          <div className="page-header">
+        <div className={styles.inner}>
+          <div className={styles.header_page}>
             Home * Collection * {`${sex ? sex : ""}`}{" "}
           </div>
-          <div className="main-block">
-            <div className="main-block__inner">
-              <div className="list-info">
-                <div className="list-info__title">Newness</div>
-                <nav className="list-info__nav">
+          <div>
+            <div className={styles.main}>
+              <div className={styles.info}>
+                <div className={styles.info_title}>Newness</div>
+                <nav className={styles.info_nav}>
                   <ul>
                     {category.map((item: string) => (
-                      <li>
+                      <li key={item}>
                         <Link to={`${sex ? `/${sex}/${item}` : `/${item}`}`}>
                           {item}
                         </Link>
@@ -38,7 +39,7 @@ const Home:React.FC = () => {
                   </ul>
                 </nav>
               </div>
-              <div className="item-block">
+              <div className={styles.items}>
                 <Sort />
                 <ItemList />
               </div>

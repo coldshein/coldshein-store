@@ -1,0 +1,129 @@
+.modal {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #00000069;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s ease-in-out;
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+
+        .block {
+            transform: translateY(0);
+        }
+    }
+}
+
+.block {
+    height: 95px;
+    background-color: #ffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+}
+
+.search_bar {
+    width: 40%;
+    position: relative;
+
+    input {
+        width: 100%;
+        padding: 25px 15px 10px 15px;
+        border: 1px solid #111;
+        font-size: 16px;
+        outline: none;
+
+        &:hover {
+            border-width: 2px;
+        }
+
+        &:focus {
+            border-width: 2px;
+        }
+    }
+
+    input:focus+label,
+    input:not(:placeholder-shown)+label {
+        top: 2px;
+        transform: scale(.85) translateX(10px);
+        left: 3px;
+        opacity: 1;
+
+    }
+
+    label {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        left: 15px;
+        pointer-events: none;
+        transition: .2s ease-in-out;
+        opacity: .5;
+    }
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.close {
+    margin-left: 20px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.list {
+    position: absolute;
+    width: 100%;
+    border: 1px solid #11111160;
+    padding: 10px 15px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #F6F6F6;
+    }
+
+    a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 980px) {
+    .search_bar{
+        width: 80%;
+    }
+}

@@ -1,4 +1,6 @@
 import React from 'react'
+import styles from './ItemCart.module.scss'
+
 
 interface ICardItem {
     title: string;
@@ -10,12 +12,12 @@ interface ICardItem {
 
 const ItemCard: React.FC<ICardItem> = ({title, imageUrl, price, size}) => {
     return ( 
-        <div className="card-item">
-            <div className="card-img">
+        <div className={styles.item}>
+            <div className={styles.img}>
                 <img src={imageUrl[0]} alt="" />
             </div>
-            <div className="card-title">{title}</div>
-            <div className="card-price">{price}.00 USD</div>
+            <div className={styles.title}>{title}</div>
+            <div className={styles.price}>{price}.00 USD</div>
         </div>
      );
 }

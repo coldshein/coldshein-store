@@ -5,6 +5,7 @@ import { fetchCartItems, setCloseCart } from "../../redux/cartSlice";
 import { RootState } from "../../redux/store";
 import EmptyCart from "../../components/EmptyCart/EmptyCart";
 import { Link } from "react-router-dom";
+import styles from './Cart.module.scss'
 
 const Cart: React.FC = () => {
   const dispatch = useDispatch() as any;
@@ -18,15 +19,15 @@ const Cart: React.FC = () => {
     dispatch(fetchCartItems());
   }, []);
   return (
-    <section className={`cart ${openCart && `cart-open`}`}>
-      <div className="cart-block">
-        <div className="close-cart" onClick={onClickCloseCart}>
+    <section className={`${styles.cart} ${openCart && styles.open}`}>
+      <div className={styles.block}>
+        <div className={styles.close} onClick={onClickCloseCart}>
           <img src="/assets/icons/close.svg" alt="" />
         </div>
-        <div className="cart-title">Your items</div>
+        <div className={styles.title}>Your items</div>
         {items.length > 0 ? (
           <>
-            <div className="cart-list">
+            <div className={styles.list}>
               {items.map((item, index) => (
                 <CartItem
                   key={item.title + index}
@@ -40,8 +41,8 @@ const Cart: React.FC = () => {
               ))}
             </div>
 
-            <span className="cart-total">Total: ${totalPrice}.00</span>
-            <div className="black-btn cart-btn">checkout</div>
+            <span className={styles.total}>Total: ${totalPrice}.00</span>
+            <div className={styles.button}>checkout</div>
           </>
         ) : (
           <EmptyCart />
