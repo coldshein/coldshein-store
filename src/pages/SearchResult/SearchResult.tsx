@@ -23,14 +23,12 @@ const SearchResult = () => {
   }, [query]);
 
   return (
-    <div className="container">
-      <div className="home-inner">
-        <div className="main-block">
-          <div className="main-block__inner">
-            <div className="item-block">
-              <Sort />
-              <ItemList />
-            </div>
+    <div className="home-inner">
+      <div className="main-block">
+        <div className="main-block__inner">
+          <div className="item-block">
+            <Sort />
+            <ItemList />
           </div>
         </div>
       </div>

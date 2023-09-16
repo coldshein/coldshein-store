@@ -11,8 +11,10 @@ import { setOpenBurger } from "../../redux/burgerSlice";
 
 const Header: React.FC = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
-  
-  const openBurger = useSelector((state:RootState) => state.burgerItems.openBurger)
+
+  const openBurger = useSelector(
+    (state: RootState) => state.burgerItems.openBurger
+  );
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -27,42 +29,44 @@ const Header: React.FC = () => {
     dispatch(setOpenCart());
   };
   const handleBurger = () => {
-    dispatch(setOpenBurger(!openBurger))
-  }
+    dispatch(setOpenBurger(!openBurger));
+  };
 
   return (
     <header className={styles.header}>
-      <div className="container">
-        <div className={styles.inner}>
-          <Link className={styles.logo} to="/">
-            NOIROVERCLOTHES
-          </Link>
-          <nav className={styles.nav}>
-            <ul>
-              <li>
-                <Link to="/collection/men">man</Link>
-              </li>
-              <li>
-                <Link to="/collection/women">woman</Link>
-              </li>
-              <li>
-                <Link to="/designers">designers</Link>
-              </li>
-            </ul>
-          </nav>
-          <nav className={styles.nav}>
-            <ul>
-              <li onClick={() => setOpenSearch(true)}>search</li>
-              <li onClick={openCart}>cart</li>
-            </ul>
-          </nav>
-          <div className={`${styles.burger} ${openBurger ? styles.active : ''}`} onClick={handleBurger}>
-            <div className={styles.burger_line}></div>
-            <div className={styles.burger_line}></div>
-            <div className={styles.burger_line}></div>
-          </div>
+      <div className={styles.inner}>
+        <Link className={styles.logo} to="/">
+          NOIROVERCLOTHES
+        </Link>
+        <nav className={styles.nav}>
+          <ul>
+            <li>
+              <Link to="/collection/men">man</Link>
+            </li>
+            <li>
+              <Link to="/collection/women">woman</Link>
+            </li>
+            <li>
+              <Link to="/designers">designers</Link>
+            </li>
+          </ul>
+        </nav>
+        <nav className={styles.nav}>
+          <ul>
+            <li onClick={() => setOpenSearch(true)}>search</li>
+            <li onClick={openCart}>cart</li>
+          </ul>
+        </nav>
+        <div
+          className={`${styles.burger} ${openBurger ? styles.active : ""}`}
+          onClick={handleBurger}
+        >
+          <div className={styles.burger_line}></div>
+          <div className={styles.burger_line}></div>
+          <div className={styles.burger_line}></div>
         </div>
       </div>
+
       <Search closeSearch={closeSearch} openSearch={openSearch} />
     </header>
   );
