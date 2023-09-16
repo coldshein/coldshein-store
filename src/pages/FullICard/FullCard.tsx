@@ -5,11 +5,9 @@ import { useDispatch } from "react-redux";
 import { addItem, postCartItem, setOpenCart } from "../../redux/cartSlice";
 import styles from './FullCard.module.scss'
 
-type itemParams = {
-  id: string;
-};
+
 interface IFullCard {
-  id: string;
+  id: number;
   price: string;
   title: string;
   imageUrl: string[];
@@ -19,23 +17,28 @@ interface IFullCard {
   type: string;
 }
 
+
 const FullCard: React.FC = () => {
-  
+  const {id} = useParams();
+
   const dispatch = useDispatch() as any;
   const [items, setItems] = React.useState<IFullCard>();
 
   const [size, setSize] = React.useState("");
 
-  const { id } = useParams<itemParams>();
-
-  const fetchOneItem = async (id: any) => {
-    const { data } = await axios.get(`http://localhost:3001/items/${id}`);
+  const fetchFullCard = async (id:string) => {
+   try {
+    const {data} = await axios.get(`https://650464d5c8869921ae24f99f.mockapi.io/items/${id}`)
     setItems(data);
-  };
-
+   } catch (error) {
+    console.log(error)
+   }
+  }
   React.useEffect(() => {
-    fetchOneItem(id);
-  }, []);
+   if(id){
+    fetchFullCard(id);
+   }
+  },[id])
 
   const handleSize = (size: any) => {
     setSize(size);
@@ -57,7 +60,6 @@ const FullCard: React.FC = () => {
           imageUrl: items.imageUrl,
           price: items.price,
           addedDate: new Date().toISOString(),
-          count: 1,
         } as any;
 
         dispatch(addItem(addedItem));

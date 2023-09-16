@@ -15,19 +15,19 @@ import styles from './ItemList.module.scss'
 
 export type QueryType = {
   query: string;
-  link: string;
+  designer: string;
   sex: string;
   category: string;
 };
 
 const ItemList: React.FC = () => {
-  const { query, link, sex, category } = useParams<QueryType>();
+  const { query, designer, sex, category } = useParams<QueryType>();
   const dispatch: Dispatch<AnyAction> = useDispatch();
   const { items, loading } = useSelector((state: RootState) => state.shopItems);
 
   React.useEffect(() => {
-    if (link) {
-      dispatch(fetchCollections(link) as any);
+    if (designer) {
+      dispatch(fetchCollections(designer) as any);
     } else if (sex) {
       dispatch(fetchSexCollections({ sex }) as any);
       if (category) {
@@ -38,7 +38,7 @@ const ItemList: React.FC = () => {
     } else {
       dispatch(fetchShopItems(query) as any);
     }
-  }, [link, query, sex, category]);
+  }, [designer, query, sex, category]);
   
   return (
     <div className={styles.list}>

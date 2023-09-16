@@ -27,12 +27,13 @@ const initialState: ItemState = {
   searchValue: "",
 };
 
+
 export const fetchShopItems = createAsyncThunk<ItemType[], string | void>(
   "items/fetchShopItems",
   async (query, { dispatch }) => {
     try {
       const url = query
-        ?  `https://650464d5c8869921ae24f99f.mockapi.io/items?id=${query}`
+        ? `https://650464d5c8869921ae24f99f.mockapi.io/items?title=${query}`
         : `https://650464d5c8869921ae24f99f.mockapi.io/items`;
       const { data } = await axios.get(url);
       dispatch(setItems(data));
@@ -44,10 +45,10 @@ export const fetchShopItems = createAsyncThunk<ItemType[], string | void>(
 );
 
 export const fetchCollections = createAsyncThunk<ItemType[], string | void>(
-  "items/fetchCollections",
-  async (link, { dispatch }) => {
+  "items/fetchShopItems",
+  async (designer, { dispatch }) => {
     try {
-      const url = `https://650464d5c8869921ae24f99f.mockapi.io/items?id=${link}`;
+      const url = `https://650464d5c8869921ae24f99f.mockapi.io/items?link=${designer}`;
       const { data } = await axios.get(url);
       dispatch(setItems(data));
       return data;
