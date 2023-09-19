@@ -20,7 +20,6 @@ const Brands: React.FC = () => {
 
   return (
     <div className="main-block">
-      <div className="page-header">home * designers</div>
       <div className={styles.block}>
         <div className={styles.title}>Designers</div>
         <div className={styles.list}>

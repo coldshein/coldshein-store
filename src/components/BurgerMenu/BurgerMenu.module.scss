@@ -54,5 +54,16 @@
 @media (max-width: 980px) {
     .modal{
         display: flex;
+        margin: 0;
+
+    }
+    .nav:nth-child(1){
+        ul{
+            li{
+                a{
+                    font-weight: 700;
+                }
+            }
+        }
     }
 }

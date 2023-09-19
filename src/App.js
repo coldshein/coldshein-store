@@ -14,12 +14,12 @@ function App() {
       <Route path="/" element={<MainLayout />}>
         <Route path="*" element={<NotFound />} />
         <Route path="" element={<Home />} />
-        <Route path="/designers" element={<Brands />} />
+        <Route path="/:designers" element={<Brands />} />
         <Route path="/collections/:designer" element={<Home />} />  {/*designer*/}
         <Route path="/collection/:sex" element={<Home />} />
         <Route path="/:category" element={<Home />} />
         <Route path="/:sex/:category" element={<Home />} />
-        <Route path="/items/:id" element={<FullCard />} exact/>
+        <Route path="/products/:id" element={<FullCard />} />
         <Route path="/search/:query" element={<SearchResult />} /> {/*searching*/}
       </Route>
     </Routes>

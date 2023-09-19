@@ -19,9 +19,6 @@ const Home: React.FC = () => {
   return (
     <section>
       <div className={styles.inner}>
-        <div className={styles.header_page}>
-          Home * Collection * {`${sex ? sex : ""}`}{" "}
-        </div>
         <div>
           <div className={styles.main}>
             <div className={styles.info}>

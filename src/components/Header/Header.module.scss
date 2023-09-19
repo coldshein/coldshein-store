@@ -20,6 +20,19 @@
             text-transform: uppercase;
             text-decoration: none;
             cursor: pointer;
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}
+.nav:nth-of-type(1){
+    ul{
+        li{
+            a{
+                text-decoration: none;
+                font-weight: 700;
+            }
         }
     }
 }

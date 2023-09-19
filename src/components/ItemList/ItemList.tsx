@@ -49,7 +49,7 @@ const ItemList: React.FC = () => {
       ) : query ? (
         items.length > 0 ? (
           items.map((item) => (
-            <Link to={`../items/${item.id}`} key={item.id}>
+            <Link to={`../products/${item.id}`} key={item.id}>
               <CardItem
                 title={item.title}
                 imageUrl={item.imageUrl}
@@ -67,7 +67,7 @@ const ItemList: React.FC = () => {
         )
       ) : (
         items.map((item) => (
-          <Link to={`../items/${item.id}`} key={item.id}>
+          <Link to={`../products/${item.id}`} key={item.id}>
             <CardItem
               title={item.title}
               imageUrl={item.imageUrl}
