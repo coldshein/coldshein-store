@@ -5,6 +5,7 @@ import { setOpenCart } from "../../redux/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchValue } from "../../redux/itemSlice";
 import { RootState } from "../../redux/store";
+import { setOpenBurger } from "../../redux/burgerSlice";
 
 const BurgerMenu = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
@@ -13,6 +14,7 @@ const BurgerMenu = () => {
     setOpenSearch(false);
     dispatch(setSearchValue(""));
   };
+ 
   const dispatch = useDispatch();
   const openCart = () => {
     dispatch(setOpenCart());

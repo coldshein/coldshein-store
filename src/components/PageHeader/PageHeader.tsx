@@ -12,7 +12,7 @@ const PageHeader: React.FC = () => {
     return ( 
         <div className={styles.block}>
         <Link to="/">Home</Link> {
-           options ? `* ${options}` : ''
+           options ? <Link to={`/${options}`}>{options}</Link> : ''
         }
       </div>
      );

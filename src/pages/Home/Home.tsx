@@ -3,19 +3,25 @@ import CardItem from "../../components/ItemCard/ItemCard";
 import Sort from "../../components/Sort/Sort";
 import ItemList from "../../components/ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.scss";
+import { setOpenBurger } from "../../redux/burgerSlice";
 
 const Home: React.FC = () => {
+  const dispatch = useDispatch()
   const { sex } = useParams();
   const items = useSelector((state: RootState) => state.shopItems.items);
 
   const allCategories = items.map((item) => item.category);
   const categories = new Set<string>(allCategories);
   const category = Array.from(categories);
-
+  React.useEffect(() => {
+    return () => {
+      dispatch(setOpenBurger(false));
+    }
+  },)
   return (
     <section>
       <div className={styles.inner}>

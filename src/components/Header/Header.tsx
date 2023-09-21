@@ -41,10 +41,10 @@ const Header: React.FC = () => {
         <nav className={styles.nav}>
           <ul>
             <li>
-              <Link to="/collection/men">man</Link>
+              <Link to="/collection/men">men</Link>
             </li>
             <li>
-              <Link to="/collection/women">woman</Link>
+              <Link to="/collection/women">women</Link>
             </li>
             <li>
               <Link to="/designers">designers</Link>
