@@ -12,6 +12,8 @@ import { AnyAction, Dispatch } from "@reduxjs/toolkit";
 import { Link, useParams } from "react-router-dom";
 import HomeSkeleton from "../../Skeletons/HomeSkeleton";
 import styles from './ItemList.module.scss'
+import { useGetAllStoreItemsQuery } from "../../redux/API";
+
 
 export type QueryType = {
   query: string;
@@ -23,32 +25,18 @@ export type QueryType = {
 const ItemList: React.FC = () => {
   const { query, designer, sex, category } = useParams<QueryType>();
   const dispatch: Dispatch<AnyAction> = useDispatch();
-  const { items, loading } = useSelector((state: RootState) => state.shopItems);
-
-  React.useEffect(() => {
-    if (designer) {
-      dispatch(fetchCollections(designer) as any);
-    } else if (sex) {
-      dispatch(fetchSexCollections({ sex }) as any);
-      if (category) {
-        dispatch(fetchSexCollections({ sex, category }) as any);
-      }
-    } else if (category) {
-      dispatch(fetchCategoryCollections(category) as any);
-    } else {
-      dispatch(fetchShopItems(query) as any);
-    }
-  }, [designer, query, sex, category]);
-  
+  const {data, error, isLoading} = useGetAllStoreItemsQuery();
+  console.log(data, error, isLoading);
+ 
   return (
     <div className={styles.list}>
-      {loading === "pending" ? (
+      {isLoading === true ? (
         [...Array(8)].map((item, index) => (
           <HomeSkeleton key={index}/>
         ) )
       ) : query ? (
-        items.length > 0 ? (
-          items.map((item) => (
+        data && data.length > 0 ? (
+          data.map((item) => (
             <Link to={`../products/${item.id}`} key={item.id}>
               <CardItem
                 title={item.title}
@@ -66,7 +54,7 @@ const ItemList: React.FC = () => {
           </h1>
         )
       ) : (
-        items.map((item) => (
+       data && data.map((item) => (
           <Link to={`../products/${item.id}`} key={item.id}>
             <CardItem
               title={item.title}
@@ -79,6 +67,7 @@ const ItemList: React.FC = () => {
         ))
       )}
     </div>
+  
   );
 };
 

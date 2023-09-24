@@ -8,15 +8,18 @@ import BurgerMenu from "../components/BurgerMenu/BurgerMenu";
 import PageHeader from "../components/PageHeader/PageHeader";
 
 const MainLayout = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   return (
-    <div className="app-container">
-      <Header />
-      <BurgerMenu/>
-      {id ? '' : <PageHeader/>}
-      <Outlet />
-      <Cart/>
-    </div>
+    <>
+     <Header />
+      <div className="app-container">
+       
+        <BurgerMenu />
+        {id ? "" : <PageHeader />}
+        <Outlet />
+      </div>
+      <Cart />
+    </>
   );
 };
 
